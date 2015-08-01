@@ -7,10 +7,10 @@ import time,sys
 
 keyDelay = 0.1
 keymap = {
-    "Up": win32con.VK_UP,
-    "Left": win32con.VK_LEFT,
-    "Down": win32con.VK_DOWN,
-    "Right": win32con.VK_RIGHT,
+    "Up": ord("U"), #win32con.VK_UP,
+    "Left": ord("L"), #win32con.VK_LEFT,
+    "Down": ord("D"), #win32con.VK_DOWN,
+    "Right": ord("R"), #win32con.VK_RIGHT,
     "b": ord("B"),
     "a": ord("A"),
     "y": ord("Y"), #for NDS
@@ -26,6 +26,8 @@ def sendKey(button):
 
 if __name__ == "__main__":
     win = win32ui.FindWindow(None, sys.argv[1])
+    print(sys.argv[1])
     win.SetForegroundWindow()
     win.SetFocus()
     sendKey(sys.argv[2])
+    print(sys.argv[2])

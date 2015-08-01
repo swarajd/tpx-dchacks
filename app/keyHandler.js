@@ -1,4 +1,5 @@
 var exec = require('child_process').exec,
+PythonShell = require('python-shell'),
 config = require('./config.js'),
 lastTime = {},
 windowID = 'unfilled',
@@ -27,6 +28,7 @@ var defaultKeyMap = config.keymap || {
 };
 
 function sendKey(command) {
+    console.log(command);
     //if doesn't match the filtered words
     if (!command.match(regexFilter)) {
         var allowKey = true,
@@ -49,7 +51,15 @@ function sendKey(command) {
                 //use python on windows
                 // "VisualBoyAdvance"
                 // "DeSmuME 0.9.10 x64"
-                exec('key.py' + '  ' + config.programName + ' ' + key);
+                var options = {
+                    scriptPath: require('path').dirname(require.main.filename),
+                    args: [config.programName, key]
+                };
+                //exec(['python', 'key.py', config.programName, key]);
+                PythonShell.run('key.py', options, function(err, results) {
+                    if (err) throw err;
+                    console.log('keypressed');
+                });
             }
         }
     }

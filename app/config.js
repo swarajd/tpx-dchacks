@@ -1,4 +1,8 @@
-var nconf = require('nconf').argv().env().file({ file:'config.json' });
+var nconf = require('nconf');
+
+nconf.argv()
+     .env()
+     .file({ file: './config.json' });
 
 // List of commands to check for
 var commands = [
@@ -8,14 +12,14 @@ var commands = [
     'democracy', 'anarchy'
 ];
 
-var username = process.env.TWITCH_USERNAME || nconf.get('TWITCH_USERNAME');
-var oauth = process.env.TWITCH_OAUTH || nconf.get('TWITCH_OAUTH');
-var channel = process.env.TWITCH_CHANNEL || nconf.get('TWITCH_CHANNEL');
-var os = process.env.CONFIG_OS || nconf.get('CONFIG_OS');
-var programName = process.env.CONFIG_PROGRAM_NAME || nconf.get('CONFIG_PROGRAM_NAME');
-var maxCharName = process.env.CONFIG_MAX_CHAR_NAME || nconf.get('CONFIG_MAX_CHAR_NAME');
-var maxCharCommand = process.env.CONFIG_MAX_CHAR_COMMAND || nconf.get('CONFIG_MAX_CHAR_COMMAND');
-var sendKey = process.env.CONFIG_SEND_KEY || nconf.get('CONFIG_SEND_KEY');
+var username = 'swarajd'; //process.env.TWITCH_USERNAME || nconf.get('TWITCH_USERNAME');
+var oauth = 'oauth:s8r95julccdmvawrwi37pitepqhqnf'; //process.env.TWITCH_OAUTH || nconf.get('TWITCH_OAUTH');
+var channel = '#swarajd'; //process.env.TWITCH_CHANNEL || nconf.get('TWITCH_CHANNEL');
+var os = 'windows'; //process.env.CONFIG_OS || nconf.get('CONFIG_OS');
+var programName = 'TwitchPlaysRover - Google Chrome'; //process.env.CONFIG_PROGRAM_NAME || nconf.get('CONFIG_PROGRAM_NAME');
+var maxCharName = 8; //process.env.CONFIG_MAX_CHAR_NAME || nconf.get('CONFIG_MAX_CHAR_NAME');
+var maxCharCommand = 20; //process.env.CONFIG_MAX_CHAR_COMMAND || nconf.get('CONFIG_MAX_CHAR_COMMAND');
+var sendKey = true; //process.env.CONFIG_SEND_KEY || nconf.get('CONFIG_SEND_KEY');
 var serverIP = process.env.TWITCH_IP || nconf.get('TWITCH_IP');
 var filteredCommands = process.env.CONFIG_FILTERED_COMMANDS || nconf.get('CONFIG_FILTERED_COMMANDS');
 var throttledCommands = process.env.CONFIG_THROTTLED_COMMANDS || nconf.get('CONFIG_THROTTLED_COMMANDS');

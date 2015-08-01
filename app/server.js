@@ -23,6 +23,7 @@ var commandRegex = config.regexCommands ||
 new RegExp('^(' + config.commands.join('|') + ')$', 'i');
 
 client.addListener('message' + config.channel, function(from, message) {
+    console.log(message);
     if (message.match(commandRegex)) {
 
         if (config.printToConsole) {
