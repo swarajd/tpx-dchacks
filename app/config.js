@@ -13,7 +13,7 @@ var commands = [
 ];
 
 var username = 'swarajd'; //process.env.TWITCH_USERNAME || nconf.get('TWITCH_USERNAME');
-var oauth = 'oauth:s8r95julccdmvawrwi37pitepqhqnf'; //process.env.TWITCH_OAUTH || nconf.get('TWITCH_OAUTH');
+var oauth =   'oauth:8v3cc6ng4spl7k4h4pnh76iuixrx4p'; //process.env.TWITCH_OAUTH || nconf.get('TWITCH_OAUTH');
 var channel = '#swarajd'; //process.env.TWITCH_CHANNEL || nconf.get('TWITCH_CHANNEL');
 var os = 'windows'; //process.env.CONFIG_OS || nconf.get('CONFIG_OS');
 var programName = 'TwitchPlaysRover - Google Chrome'; //process.env.CONFIG_PROGRAM_NAME || nconf.get('CONFIG_PROGRAM_NAME');

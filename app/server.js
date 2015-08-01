@@ -3,10 +3,12 @@ printf = require('printf'),
 keyHandler = require('./keyHandler.js'),
 config = require('./config.js');
 
+console.log(config.password);
+
 var client = new irc.Client(config.server, config.nick, {
     channels: [config.channel],
     port: config.port || 6667,
-    sasl: false,
+    ssl: false,
     nick: config.nick,
     userName: config.nick,
     password: config.password,
@@ -50,3 +52,11 @@ client.addListener('error', function(message) {
 
 client.connect();
 console.log('Connecting...');
+
+client.on('registered', function() {
+    console.log('it registered!');
+});
+
+client.on('error', function(e) {
+    console.log('you screwed up fam: ' + e);
+});

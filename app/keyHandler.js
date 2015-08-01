@@ -28,7 +28,7 @@ var defaultKeyMap = config.keymap || {
 };
 
 function sendKey(command) {
-    console.log(command);
+    //console.log(command);
     //if doesn't match the filtered words
     if (!command.match(regexFilter)) {
         var allowKey = true,
