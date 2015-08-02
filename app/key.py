@@ -7,11 +7,11 @@ import time,sys
 
 keyDelay = 0.1
 keymap = {
-    "Up": ord("U"), #win32con.VK_UP,
-    "Left": ord("L"), #win32con.VK_LEFT,
-    "Down": ord("D"), #win32con.VK_DOWN,
-    "Right": ord("R"), #win32con.VK_RIGHT,
-    "b": ord("B"),
+    "Up": ord("F"), #win32con.VK_UP, #forward
+    "Left": ord("L"), #win32con.VK_LEFT, #left
+    "Down": ord("B"), #win32con.VK_DOWN, #backward
+    "Right": ord("R"), #win32con.VK_RIGHT, #right
+    "b": ord("S"), #stop
     "a": ord("A"),
     "y": ord("Y"), #for NDS
     "x": ord("X"), #for NDS

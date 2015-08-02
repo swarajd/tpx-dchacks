@@ -21,8 +21,8 @@ function setWindowID() {
 }
 
 var defaultKeyMap = config.keymap || {
-    'up':'Up','left':'Left','down':'Down','right':'Right',
-    'a':'a','b':'b',
+    'forward':'Up','left':'Left','back':'Down','right':'Right',
+    'a':'a','stop':'b',
     'x':'x','y':'y',
     'start':'s','select':'e'
 };
@@ -51,6 +51,7 @@ function sendKey(command) {
                 //use python on windows
                 // "VisualBoyAdvance"
                 // "DeSmuME 0.9.10 x64"
+                console.log(config.programName);
                 var options = {
                     scriptPath: require('path').dirname(require.main.filename),
                     args: [config.programName, key]
@@ -58,7 +59,6 @@ function sendKey(command) {
                 //exec(['python', 'key.py', config.programName, key]);
                 PythonShell.run('key.py', options, function(err, results) {
                     if (err) throw err;
-                    console.log('keypressed');
                 });
             }
         }
